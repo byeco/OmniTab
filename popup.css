@@ -3,7 +3,7 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 20px;
-    background-color: #262626;
+    background-color: #131313;
     width: 400px; /* Sayfa genişliği, ihtiyaca göre değiştirilebilir */
 }
 
@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #3498db; /* Header arka plan rengi */
+    background-color: #131313; /* Header arka plan rengi */
     padding: 10px;
     color: #fff; /* Header metin rengi */
 }
@@ -35,9 +35,12 @@ textarea {
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 30px; 
-    background-color: #262626;
+    background-color: #131313;
     color: #fff;
     height: 150px; 
+    overflow: hidden; /* Yanları göstermemek için eklenen stil */
+    border: none; /* İsteğe bağlı olarak kenar çizgisini kaldırabilirsiniz */
+    resize: none; /* Yan çizgileri kaldırmak için eklenen stil */
 }
 
 #optimizeButton {
@@ -61,7 +64,7 @@ textarea {
 .footer {
     margin-top: 20px;
     text-align: center;
-    background-color: #292929; 
+    background-color: #161616; 
     padding: 10px;
     color: #fff; 
 }
