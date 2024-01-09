@@ -41,7 +41,7 @@ textarea {
 }
 
 #optimizeButton {
-    width: 100%; 
+    width: 70%; 
     background-color: #2ecc71; 
     color: #fff; 
     padding: 10px;
@@ -77,4 +77,18 @@ textarea {
 
 a {
     color: #fff;
+}
+.select-container {
+    display: flex;
+    align-items: center;
+}
+
+select {
+    width: 25%;
+    padding: 8px; /* Küçük bir padding eklendi */
+    margin-left: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
 }

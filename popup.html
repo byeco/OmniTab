@@ -1,28 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nostge Code Optimizer</title>
     <link rel="stylesheet" href="popup.css">
     <script src="JS/popup.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Nostge Code Optimizer</h1>
-        </div>
-        <div class="content">
-            <textarea id="codeInput" placeholder="Enter your code here"></textarea>
-            <button id="optimizeButton">Optimize Code</button>
-            <center><p>Copy Code</p></center>
-            <div id="result"></div>
-        </div>
-        <div class="footer">
-            <a href="https://github.com/byeco" target="_blank">
-                <p>© 2024 Byeco Software Ltd</p>
-            </a>
-        </div>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Nostge Code Optimizer</h1>
     </div>
-</body>
+    <div class="content">
+      <textarea id="codeInput" placeholder="Enter your code here"></textarea>
+      <div class="select-container">
+      <button id="optimizeButton">Optimize Code</button>
+      
+        <select id="languageSelect">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+        </select>
+    </div>
+    
+      <div id="result"></div>
+    </div>
+    <div class="footer">
+      <a href="https://github.com/byeco" target="_blank">
+        <p>
+          © 2024 Byeco Software Ltd
+        </p>
+      </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          document.getElementById('optimizeButton').addEventListener('click', function() {
+            var originalCode = document.getElementById('codeInput').value;
+            
+            // Burada gerçek bir optimizasyon algoritması uygulayabilirsiniz
+            // Bu sadece basit bir örnektir
+            var optimizedCode = optimizeCode(originalCode);
+            
+            document.getElementById('result').innerText = optimizedCode;
+          });
+  
+          // Basit bir optimizasyon örneği
+          function optimizeCode(code) {
+            // Bu sadece örnek bir optimizasyondur, gerçek bir optimizasyon algoritması uygulamalısınız
+            // Örneğin, boşlukları temizlemek için basit bir kod
+            return code.replace(/\s+/g, ' ');
+          }
+        });
+      </script>
+  </body>
 </html>
