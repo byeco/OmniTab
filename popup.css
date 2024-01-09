@@ -30,20 +30,20 @@ body {
 }
 
 textarea {
-    width: calc(100% - 0px); /* Sola doğru genişletme ve kenar boşluğu bırakma */
-    max-width: 100%; /* Maksimum genişlik sınırlaması */
+    width: calc(100% - 0px);
+    max-width: 100%; 
     padding: 10px;
     box-sizing: border-box;
-    margin-bottom: 30px; /* Alt boşluğu artırma */
+    margin-bottom: 30px; 
     background-color: #262626;
     color: #fff;
-    height: 150px; /* Yüksekliği ayarlama, ihtiyaca göre değiştirilebilir */
+    height: 150px; 
 }
 
 #optimizeButton {
-    width: 100%; /* Tam genişlik */
-    background-color: #2ecc71; /* Optimize Button arka plan rengi */
-    color: #fff; /* Optimize Button metin rengi */
+    width: 100%; 
+    background-color: #2ecc71; 
+    color: #fff; 
     padding: 10px;
     cursor: pointer;
     border: none;
@@ -51,7 +51,7 @@ textarea {
 }
 
 #optimizeButton:hover {
-    background-color: #27ae60; /* Optimize Button hover rengi */
+    background-color: #27ae60; 
 }
 
 #result {
@@ -61,9 +61,9 @@ textarea {
 .footer {
     margin-top: 20px;
     text-align: center;
-    background-color: #292929; /* Footer arka plan rengi */
+    background-color: #292929; 
     padding: 10px;
-    color: #fff; /* Footer metin rengi */
+    color: #fff; 
 }
 
 .footer p {
