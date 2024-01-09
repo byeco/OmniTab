@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Nostge Code Optimizer",
+    "version": "1.0",
+    "description": "Microsoft Edge Code Optimization Extension",
+    "permissions": ["contextMenus", "activeTab"],
+    "background": {
+      "scripts": ["JS/background.js"],
+      "persistent": false
+    },
+    "icons": {
+      "48": "İCON/icon.png"
+    },
+    "browser_action": {
+      "default_icon": "İCON/icon.png",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["JS/content.js"]
+      }
+    ]
+  }
+  

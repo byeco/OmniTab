@@ -1,0 +1,80 @@
+/* popup.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #262626;
+    width: 400px; /* Sayfa genişliği, ihtiyaca göre değiştirilebilir */
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto; /* Ortala */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db; /* Header arka plan rengi */
+    padding: 10px;
+    color: #fff; /* Header metin rengi */
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+textarea {
+    width: calc(100% - 0px); /* Sola doğru genişletme ve kenar boşluğu bırakma */
+    max-width: 100%; /* Maksimum genişlik sınırlaması */
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 30px; /* Alt boşluğu artırma */
+    background-color: #262626;
+    color: #fff;
+    height: 150px; /* Yüksekliği ayarlama, ihtiyaca göre değiştirilebilir */
+}
+
+#optimizeButton {
+    width: 100%; /* Tam genişlik */
+    background-color: #2ecc71; /* Optimize Button arka plan rengi */
+    color: #fff; /* Optimize Button metin rengi */
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+#optimizeButton:hover {
+    background-color: #27ae60; /* Optimize Button hover rengi */
+}
+
+#result {
+    margin-top: 10px;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #292929; /* Footer arka plan rengi */
+    padding: 10px;
+    color: #fff; /* Footer metin rengi */
+}
+
+.footer p {
+    margin: 0;
+}
+
+.github-icon img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+a {
+    color: #fff;
+}
