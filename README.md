@@ -1,6 +1,6 @@
 # Nostge Code Optimizer
 
-
+A small optimization extension will be developed for certain languages for developers, of course, I can guarantee that the optimization will be more over time.
 
 # Nostge Code Optimizer (1.0) Beta Design
 
