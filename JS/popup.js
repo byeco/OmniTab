@@ -22,19 +22,36 @@ function optimizeCode(code, language) {
     return optimizeCpp(code);
   } else if (language === 'java') {
     return optimizeJava(code);
+  } else if (language === 'ruby') {
+    return optimizeRuby(code);
+  } else if (language === 'php') {
+    return optimizePHP(code);
+  } else if (language === 'swift') {
+    return optimizeSwift(code);
+  } else if (language === 'go') {
+    return optimizeGo(code);
   } else {
     // Desteklenmeyen dil durumu
     return 'Desteklenmeyen dil';
   }
 }
 
-// JavaScript için kodu optimize eden fonksiyon
+// Diğer diller için optimize fonksiyonları burada tanımlanmalıdır.
+// optimizeJavaScript, optimizePython, optimizeCpp, optimizeJava, optimizeRuby, optimizePHP, optimizeSwift, optimizeGo...
+
+//Java Script Code Optimize
 function optimizeJavaScript(code) {
-  // Satır sonundaki yorum satırlarını kaldırma
+  // Tek satırlık yorumları kaldırma
   code = code.replace(/\/\/.*$/gm, '');
 
-  // Boşlukları temizleme ve çoklu boşlukları tek bir boşlukla değiştirme
-  code = code.replace(/\s+/g, ' ');
+  // Çok satırlı yorumları kaldırma
+  code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+
+  // Gereksiz semikolonları kaldırma (boş statement'lar)
+  code = code.replace(/;\s*;/g, ';');
+
+  // Fazladan boşlukları ve satır sonlarını kaldırma
+  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
 
   // Satır başındaki ve sonundaki boşlukları temizleme
   code = code.trim();
@@ -42,13 +59,17 @@ function optimizeJavaScript(code) {
   return code;
 }
 
-// Python için kodu optimize eden fonksiyon
+
+//Python Code Optimize
 function optimizePython(code) {
-  // Satır sonundaki yorum satırlarını kaldırma
-  code = code.replace(/#.*/g, '');
+  // Çok satırlı yorum satırlarını kaldırma
+  code = code.replace(/'''[\s\S]*?'''|"""[\s\S]*?"""/g, '');
 
-  // Boşlukları temizleme ve çoklu boşlukları tek bir boşlukla değiştirme
-  code = code.replace(/\s+/g, ' ');
+  // Tek satırlık yorumları kaldırma
+  code = code.replace(/#.*$/gm, '');
+
+  // Fazladan boşlukları ve satır sonlarını kaldırma
+  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
 
   // Satır başındaki ve sonundaki boşlukları temizleme
   code = code.trim();
@@ -56,13 +77,19 @@ function optimizePython(code) {
   return code;
 }
 
-// C++ için kodu optimize eden fonksiyon
+//c++ Code Optimize
 function optimizeCpp(code) {
-  // Satır sonundaki yorum satırlarını kaldırma
+  // Tek satırlık yorumları kaldırma
   code = code.replace(/\/\/.*$/gm, '');
 
-  // Boşlukları temizleme ve çoklu boşlukları tek bir boşlukla değiştirme
-  code = code.replace(/\s+/g, ' ');
+  // Çok satırlı yorumları kaldırma
+  code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+
+  // Gereksiz semikolonları kaldırma (boş statement'lar)
+  code = code.replace(/;\s*;/g, ';');
+
+  // Fazladan boşlukları ve satır sonlarını kaldırma
+  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
 
   // Satır başındaki ve sonundaki boşlukları temizleme
   code = code.trim();
@@ -70,13 +97,81 @@ function optimizeCpp(code) {
   return code;
 }
 
-// Java için kodu optimize eden fonksiyon
+//Java Code Optimize
 function optimizeJava(code) {
-  // Satır sonundaki yorum satırlarını kaldırma
+  // Tek satırlık yorumları kaldırma
   code = code.replace(/\/\/.*$/gm, '');
 
-  // Boşlukları temizleme ve çoklu boşlukları tek bir boşlukla değiştirme
-  code = code.replace(/\s+/g, ' ');
+  // Çok satırlı yorumları kaldırma
+  code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+
+  // Gereksiz semikolonları kaldırma (boş statement'lar)
+  code = code.replace(/;\s*;/g, ';');
+
+  // Fazladan boşlukları ve satır sonlarını kaldırma
+  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+
+  // Satır başındaki ve sonundaki boşlukları temizleme
+  code = code.trim();
+
+  return code;
+}
+
+//Ruby Code Optimize
+function optimizeRuby(code) {
+  // Tek satırlık yorumları kaldırma
+  code = code.replace(/#.*$/gm, '');
+
+  // Fazladan boşlukları ve satır sonlarını kaldırma
+  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+
+  // Satır başındaki ve sonundaki boşlukları temizleme
+  code = code.trim();
+
+  return code;
+}
+
+//Php Code Optimize
+function optimizePHP(code) {
+  // Tek satırlık yorumları kaldırma
+  code = code.replace(/\/\/.*$|^\s*#.*$/gm, '');
+
+  // Çok satırlı yorumları kaldırma
+  code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+
+  // Fazladan boşlukları ve satır sonlarını kaldırma
+  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+
+  // Satır başındaki ve sonundaki boşlukları temizleme
+  code = code.trim();
+
+  return code;
+}
+
+//Swift Code Optimize
+function optimizeSwift(code) {
+  // Tek satırlık yorumları kaldırma
+  code = code.replace(/\/\/.*$/gm, '');
+
+  // Çok satırlı yorumları kaldırma
+  code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+
+  // Fazladan boşlukları ve satır sonlarını kaldırma
+  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+
+  // Satır başındaki ve sonundaki boşlukları temizleme
+  code = code.trim();
+
+  return code;
+}
+
+//Go Code Optimize
+function optimizeGo(code) {
+  // Tek satırlık yorumları kaldırma
+  code = code.replace(/\/\/.*$/gm, '');
+
+  // Fazladan boşlukları ve satır sonlarını kaldırma
+  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
 
   // Satır başındaki ve sonundaki boşlukları temizleme
   code = code.trim();

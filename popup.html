@@ -21,8 +21,12 @@
         <option value="python">Python</option>
         <option value="cpp">C++</option>
         <option value="java">Java</option>
-        <!-- Ekstra dilleri buraya ekleyebilirsiniz -->
+        <option value="ruby">Ruby</option>
+        <option value="php">PHP</option>
+        <option value="swift">Swift</option>
+        <option value="go">Go</option>
       </select>
+      
       
     </div>
     <div class="content"><center><a href=""><p>Click here for better quality optimization</p></a></center></div>
@@ -35,25 +39,6 @@
       </a>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          document.getElementById('optimizeButton').addEventListener('click', function() {
-            var originalCode = document.getElementById('codeInput').value;
-            
-            // Burada gerçek bir optimizasyon algoritması uygulayabilirsiniz
-            // Bu sadece basit bir örnektir
-            var optimizedCode = optimizeCode(originalCode);
-            
-            document.getElementById('result').innerText = optimizedCode;
-          });
-  
-          // Basit bir optimizasyon örneği
-          function optimizeCode(code) {
-            // Bu sadece örnek bir optimizasyondur, gerçek bir optimizasyon algoritması uygulamalısınız
-            // Örneğin, boşlukları temizlemek için basit bir kod
-            return code.replace(/\s+/g, ' ');
-          }
-        });
-      </script>
+    
   </body>
 </html>
