@@ -14,16 +14,15 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #131313; /* Header arka plan rengi */
-    padding: 10px;
-    color: #fff; /* Header metin rengi */
-}
-
-.header h1 {
-    margin: 0;
-}
+    justify-content: space-between;
+  }
+  
+  .header h1 {
+    font-size: 18px; /* Yazı boyutunu küçült */
+    margin-left: 10px; /* İkon ile arasında boşluk bırak */
+    flex-grow: 1;
+  }
 
 .content {
     margin-top: 20px;
@@ -80,7 +79,9 @@ textarea {
 
 a {
     color: #fff;
-}
+    text-decoration: none; /* Alt çizgiyi kaldır */
+  }
+  
 .select-container {
     display: flex;
     align-items: center;
@@ -95,3 +96,30 @@ select {
     border: none;
     border-radius: 5px;
 }
+  
+#loginButton {
+    padding: 10px;
+    background-color: #ffffff25;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Tam yuvarlak için %50 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* İçerikleri ortala */
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 50px; /* Genişlik ve yükseklik eklendi */
+    height: 50px; /* Genişlik ve yükseklik eklendi */
+    background: url('İCON/dev.gif') no-repeat center center;
+    background-size: 60%; /* Resmi biraz büyüt */
+  }
+  
+  #loginButton:hover {
+    background-color: #ffffff23;
+  }
+  
+ h1{
+    color: #fff;
+ }
