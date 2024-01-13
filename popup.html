@@ -37,16 +37,45 @@
       
       
     </div>
-    <div class="content"><center><p><a>You can optimize the code incorrectly or incompletely, click the button at the top right for better optimization</a></p></center></div>
-    </div>
+<br>
+<br>
+    <div class="popup-container">
+      <div class="radio-group">
+          <input type="radio" id="option1" name="options" checked>
+          <label for="option1">Code Optimize</label>
+
+          <input type="radio" id="option2" name="options">
+          <label for="option2">Linear Gradient</label>
+      </div>
+  </div>
+<br>
+<br>
+  <div class="button-container">
+    
+    <button class="github-button" id="github">
+      <img src="İCON/githubicon.png" alt="GitHub Icon">
+      GitHub
+    </button>
+    <button class="report-button" id="report">
+      <img src="İCON/reporticon.gif" alt="Report Icon">
+      Report
+    </button>
+  </div>
+  <br>  
     <div class="footer">
-      <a href="https://github.com/byeco" target="_blank" title="Github Byeco">
         <p>
           © 2024 Byeco Software Ltd
         </p>
-      </a>
     </div>
-
+    <script>
+      document.getElementById("github").addEventListener("click", function() {
+        window.location.href = "https://github.com"; // GitHub'a yönlendir
+      });
+  
+      document.getElementById("report").addEventListener("click", function() {
+        window.location.href = "https://example.com/report"; // Rapor sayfasına yönlendir
+      });
+    </script>
     
   </body>
 </html>
