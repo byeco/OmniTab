@@ -1,4 +1,4 @@
-# Nostge Code Optimizer
+# Nostge Helper
 
 A small optimization extension will be developed for certain languages for developers, of course, I can guarantee that the optimization will be more over time.
 
