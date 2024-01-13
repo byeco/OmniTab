@@ -4,7 +4,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 20px;
     background-color: #131313;
-    width: 400px; /* Sayfa genişliği, ihtiyaca göre değiştirilebilir */
+    width: 300px; /* Sayfa genişliği, ihtiyaca göre değiştirilebilir */
+    height: 500px;
 }
 
 .container {
@@ -61,16 +62,20 @@ textarea {
 }
 
 .footer {
-    margin-top: 20px;
+    width: 500px;
+    margin-top: 160px;
+    margin-left: -190px;
     text-align: center;
-    background-color: #161616; 
-    padding: 10px;
+    background-color: #4d4d4d; 
+    padding: 15px;
     color: #fff; 
 }
 
 .footer p {
     margin: 0;
+    font-size: 13px;
 }
+
 
 .github-icon img {
     width: 20px;
@@ -88,7 +93,7 @@ a {
 }
 
 select {
-    width: 25%;
+    width: 40%;
     padding: 8px; /* Küçük bir padding eklendi */
     margin-left: 10px;
     background-color: #3498db;

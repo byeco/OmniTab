@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "Nostge Code Optimizer",
-    "version": "1.1",
-    "description": "Microsoft Edge Code Optimization Extension",
+    "name": "Nostge Helper",
+    "version": "1.2",
+    "description": "Nostge Helper optimizes your code for you, helps with extra codes, and provides support in design.",
     "permissions": ["contextMenus", "activeTab"],
     "background": {
       "scripts": ["JS/background.js"],
