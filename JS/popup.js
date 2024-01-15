@@ -1,26 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-// popup.js
-
-document.addEventListener('DOMContentLoaded', function() {
-  var showNewPopupButton = document.getElementById('option2');
-
-  showNewPopupButton.addEventListener('click', function() {
-    // Yeni bir popup penceresi aç
-    chrome.windows.create({
-      url: 'lineargradient.html',
-      type: 'popup',
-      width: 400,
-      height: 300,
-      left: Math.round((screen.width - 400) / 2),
-      top: Math.round((screen.height - 300) / 2),
-    });
-  });
-});
-
-  
-
-
 
   document.getElementById('optimizeButton').addEventListener('click', function () {
     var originalCode = document.getElementById('codeInput').value;
