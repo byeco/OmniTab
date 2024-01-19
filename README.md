@@ -1,4 +1,4 @@
-# Nostge Helper
+# Optimize Hub
 
 A small optimization extension will be developed for certain languages for developers, of course, I can guarantee that the optimization will be more over time.
 ![image](https://github.com/byeco/Nostge-Helper/assets/77041562/dc5c9c39-b96e-491b-b52e-a48faf3a2bad)
