@@ -1,6 +1,6 @@
 # Bilgi yada Birinin çalması durumunda iletişim bilgileri
 
-Mail= `info@byeco.com`
+Mail= `info@byeco.xyz`
 
 Discord Name= `nostgeco`
 
