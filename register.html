@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Optimize Hub</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form id="registerForm">
+        <input type="text" name="firstName" placeholder="First Name">
+        <input type="text" name="lastName" placeholder="Last Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <button type="button" onclick="registerUser()">Register</button>
+    </form>
+
+    <script>
+        function registerUser() {
+            var formData = {
+                firstName: document.getElementsByName("firstName")[0].value,
+                lastName: document.getElementsByName("lastName")[0].value,
+                email: document.getElementsByName("email")[0].value,
+                password: document.getElementsByName("password")[0].value
+            };
+
+            // Gönderilecek URL'yi ve metodunu ayarlayın
+            var url = 'extension://bpoeepamdodkjenmildahbnmhbpkenpb/register.html';  // Sunucu tarafındaki bir URL
+            var method = 'POST';
+
+            // JSON verilerini göndermek için fetch kullanın
+            fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('Kullanıcı başarıyla kaydedildi.');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Kayıt sırasında bir hata oluştu.');
+            });
+        }
+    </script>
+</body>
+</html>

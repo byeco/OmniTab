@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Nostge Helper",
-  "version": "1.2",
-  "description": "Nostge Helper optimizes your code for you, helps with extra codes, and provides support in design.",
-  "permissions": ["contextMenus", "activeTab"],
+  "name": "Optimize Hub",
+  "version": "0.1",
+  "description": "Optimize Hub optimizes your code for you, helps with extra codes, and provides support in design.",
+  "permissions": ["activeTab"],
   "background": {
     "service_worker": "JS/background.js"
   },
