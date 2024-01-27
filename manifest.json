@@ -5,13 +5,13 @@
   "description": "Optimize Hub optimizes your code for you, helps with extra codes, and provides support in design.",
   "permissions": ["activeTab"],
   "background": {
-    "service_worker": "JS/background.js"
+    "serviceWorker": "JS/background.js"
   },
   "icons": {
-    "48": "İCON/icon.png"
+    "48": "ICON/icon.png"
   },
   "action": {
-    "default_icon": "İCON/icon.png",
+    "default_icon": "ICON/icon.png",
     "default_popup": "popup.html"
   },
   "content_scripts": [
