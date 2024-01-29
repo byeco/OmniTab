@@ -38,9 +38,6 @@ function optimizeCode(code, language) {
   }
 }
 
-// Diğer diller için optimize fonksiyonları burada tanımlanmalıdır.
-// optimizeJavaScript, optimizePython, optimizeCpp, optimizeJava, optimizeRuby, optimizePHP, optimizeSwift, optimizeGo...
-
 //Java Script Code Optimize
 function optimizeJavaScript(code) {
   // Tek satırlık yorumları kaldırma
