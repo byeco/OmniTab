@@ -1,183 +1,104 @@
 document.addEventListener('DOMContentLoaded', function () {
-
-
   document.getElementById('optimizeButton').addEventListener('click', function () {
     var originalCode = document.getElementById('codeInput').value;
     var selectedLanguage = document.getElementById('languageSelect').value;
 
-    // Dil seçimine göre optimize edilen kodu al
-    var optimizedCode = optimizeCode(originalCode, selectedLanguage);
-
-    // Optimize edilmiş kodu textarea'ya ve div'e yerleştir
-    document.getElementById('codeInput').value = optimizedCode;
-    document.getElementById('result').innerText = optimizedCode;
-
-
+    try {
+      var optimizedCode = optimizeAndFixErrors(originalCode, selectedLanguage);
+      document.getElementById('codeInput').value = optimizedCode;
+      document.getElementById('result').innerText = optimizedCode;
+    } catch (error) {
+      console.error("Hata Oluştu: " + error.message);
+    }
   });
-// Dil spesifik olarak kodu optimize eden fonksiyon
-function optimizeCode(code, language) {
-  if (language === 'javascript') {
-    return optimizeJavaScript(code);
-  } else if (language === 'python') {
-    return optimizePython(code);
-  } else if (language === 'cpp') {
-    return optimizeCpp(code);
-  } else if (language === 'java') {
-    return optimizeJava(code);
-  } else if (language === 'ruby') {
-    return optimizeRuby(code);
-  } else if (language === 'php') {
-    return optimizePHP(code);
-  } else if (language === 'swift') {
-    return optimizeSwift(code);
-  } else if (language === 'go') {
-    return optimizeGo(code);
-  } else {
-    // Desteklenmeyen dil durumu
-    return 'Desteklenmeyen dil';
+
+  function optimizeAndFixErrors(code, language) {
+    switch (language) {
+      case 'javascript':
+        return optimizeAndFixJavaScript(code);
+      case 'python':
+        return optimizeAndFixPython(code);
+      case 'cpp':
+        return optimizeAndFixCpp(code);
+      case 'java':
+        return optimizeAndFixJava(code);
+      case 'ruby':
+        return optimizeAndFixRuby(code);
+      case 'php':
+        return optimizeAndFixPHP(code);
+      case 'swift':
+        return optimizeAndFixSwift(code);
+      case 'go':
+        return optimizeAndFixGo(code);
+      default:
+        throw new Error('Desteklenmeyen dil');
+    }
   }
-}
-
-//Java Script Code Optimize
-function optimizeJavaScript(code) {
-  // Tek satırlık yorumları kaldırma
-  code = code.replace(/\/\/.*$/gm, '');
-
-  // Çok satırlı yorumları kaldırma
-  code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-
-  // Gereksiz semikolonları kaldırma (boş statement'lar)
-  code = code.replace(/;\s*;/g, ';');
-
-  // Fazladan boşlukları ve satır sonlarını kaldırma
-  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-
-  // Satır başındaki ve sonundaki boşlukları temizleme
-  code = code.trim();
-
-  return code;
-}
 
 
-//Python Code Optimize
-function optimizePython(code) {
-  // Çok satırlı yorum satırlarını kaldırma
-  code = code.replace(/'''[\s\S]*?'''|"""[\s\S]*?"""/g, '');
+  
+  function optimizeAndFixJavaScript(code) {
+    code = code.replace(/\/\/.*$/gm, '');
+    code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+    code = code.replace(/;\s*;/g, ';');
+    code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+    code = code.trim();
+    return code;
+  }
 
-  // Tek satırlık yorumları kaldırma
-  code = code.replace(/#.*$/gm, '');
+  function optimizeAndFixPython(code) {
+    code = code.replace(/'''[\s\S]*?'''|"""[\s\S]*?"""/g, '');
+    code = code.replace(/#.*$/gm, '');
+    code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+    code = code.trim();
+    return code;
+  }
 
-  // Fazladan boşlukları ve satır sonlarını kaldırma
-  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+  function optimizeAndFixCpp(code) {
+    code = code.replace(/\/\/.*$/gm, '');
+    code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+    code = code.replace(/;\s*;/g, ';');
+    code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+    code = code.trim();
+    return code;
+  }
 
-  // Satır başındaki ve sonundaki boşlukları temizleme
-  code = code.trim();
+  function optimizeAndFixJava(code) {
+    code = code.replace(/\/\/.*$/gm, '');
+    code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+    code = code.replace(/;\s*;/g, ';');
+    code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+    code = code.trim();
+    return code;
+  }
 
-  return code;
-}
+  function optimizeAndFixRuby(code) {
+    code = code.replace(/#.*$/gm, '');
+    code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+    code = code.trim();
+    return code;
+  }
 
-//c++ Code Optimize
-function optimizeCpp(code) {
-  // Tek satırlık yorumları kaldırma
-  code = code.replace(/\/\/.*$/gm, '');
+  function optimizeAndFixPHP(code) {
+    code = code.replace(/\/\/.*$|^\s*#.*$/gm, '');
+    code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+    code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+    code = code.trim();
+    return code;
+  }
 
-  // Çok satırlı yorumları kaldırma
-  code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+  function optimizeAndFixSwift(code) {
+    code = code.replace(/\/\/.*$/gm, '');
+    code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+    code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+    code = code.trim();
+    return code;
+  }
 
-  // Gereksiz semikolonları kaldırma (boş statement'lar)
-  code = code.replace(/;\s*;/g, ';');
-
-  // Fazladan boşlukları ve satır sonlarını kaldırma
-  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-
-  // Satır başındaki ve sonundaki boşlukları temizleme
-  code = code.trim();
-
-  return code;
-}
-
-//Java Code Optimize
-function optimizeJava(code) {
-  // Tek satırlık yorumları kaldırma
-  code = code.replace(/\/\/.*$/gm, '');
-
-  // Çok satırlı yorumları kaldırma
-  code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-
-  // Gereksiz semikolonları kaldırma (boş statement'lar)
-  code = code.replace(/;\s*;/g, ';');
-
-  // Fazladan boşlukları ve satır sonlarını kaldırma
-  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-
-  // Satır başındaki ve sonundaki boşlukları temizleme
-  code = code.trim();
-
-  return code;
-}
-
-//Ruby Code Optimize
-function optimizeRuby(code) {
-  // Tek satırlık yorumları kaldırma
-  code = code.replace(/#.*$/gm, '');
-
-  // Fazladan boşlukları ve satır sonlarını kaldırma
-  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-
-  // Satır başındaki ve sonundaki boşlukları temizleme
-  code = code.trim();
-
-  return code;
-}
-
-//Php Code Optimize
-function optimizePHP(code) {
-  // Tek satırlık yorumları kaldırma
-  code = code.replace(/\/\/.*$|^\s*#.*$/gm, '');
-
-  // Çok satırlı yorumları kaldırma
-  code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-
-  // Fazladan boşlukları ve satır sonlarını kaldırma
-  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-
-  // Satır başındaki ve sonundaki boşlukları temizleme
-  code = code.trim();
-
-  return code;
-}
-
-//Swift Code Optimize
-function optimizeSwift(code) {
-  // Tek satırlık yorumları kaldırma
-  code = code.replace(/\/\/.*$/gm, '');
-
-  // Çok satırlı yorumları kaldırma
-  code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-
-  // Fazladan boşlukları ve satır sonlarını kaldırma
-  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-
-  // Satır başındaki ve sonundaki boşlukları temizleme
-  code = code.trim();
-
-  return code;
-}
-
-//Go Code Optimize
-function optimizeGo(code) {
-  // Tek satırlık yorumları kaldırma
-  code = code.replace(/\/\/.*$/gm, '');
-
-  // Fazladan boşlukları ve satır sonlarını kaldırma
-  code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-
-  // Satır başındaki ve sonundaki boşlukları temizleme
-  code = code.trim();
-
-  return code;
-}
-
-
-
+  function optimizeAndFixGo(code) {
+    code = code.replace(/\/\/.*$/gm, '');
+    code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+    code = code.trim();
+    return code;
+  }
 });
