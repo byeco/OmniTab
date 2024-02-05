@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimize Hub</title>
-    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="optimize-hub.css">
     <script src="JS/popup.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   </head>
   <body>
     <div class="header">
       <i class="fa fa-optimizely" aria-hidden="true"></i>
-      <img src="ICON/icon.png" alt="nostge Icon" width="25" height="25">
-      <h1>Optimize Hub Beta</h1>
+      <img src="ICON/icon.png" alt="nostge Icon" width="30" height="30">
+      <h1>Optimize Hub</h1>
       <!--<a href="register.html" target="_blank" title="Click here for better quality optimization">
       <button id="loginButton">
       </button>      
@@ -35,6 +35,10 @@
         <option value="php">PHP</option>
         <option value="swift">Swift</option>
         <option value="go">Go</option>
+        <option value="rust">Rust</option>
+        <option value="csharp">C#</option>
+        <option value="typescript">TypeScript</option>
+        <option value="assembly">Assembly</option>
       </select>
       
       
@@ -43,9 +47,20 @@
 
 <br>
   <div class="button-container">
+      <!--<button class="report-button" id="report">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+          <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm140-40-56-56 103-104-104-104 57-56 160 160-160 160Zm180 0v-80h240v80H480Z" fill="#a8a8a8"/>
+      </svg>
+      &#160;
+        Error Checking
+      </button>
+    -->
   <a href="https://chrome.google.com/webstore/report/ibekapgpmiejiiepppjfalldofopacnk" target="_blank">
     <button class="report-button" id="report">
-      <img src="ICON/reporticon.gif" alt="Report Icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+        <path fill="#a8a8a8" d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm-40-160h80v-240h-80v240ZM330-120 120-330v-300l210-210h300l210 210v300L630-120H330Zm34-80h232l164-164v-232L596-760H364L200-596v232l164 164Zm116-280Z"/>
+    </svg>
+    &#160;    
       Report
     </button>
   </a>

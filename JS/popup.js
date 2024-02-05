@@ -1,40 +1,91 @@
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('optimizeButton').addEventListener('click', function () {
-    var originalCode = document.getElementById('codeInput').value;
-    var selectedLanguage = document.getElementById('languageSelect').value;
+      var originalCode = document.getElementById('codeInput').value;
+      var selectedLanguage = document.getElementById('languageSelect').value;
 
-    try {
-      var optimizedCode = optimizeAndFixErrors(originalCode, selectedLanguage);
-      document.getElementById('codeInput').value = optimizedCode;
-      document.getElementById('result').innerText = optimizedCode;
-    } catch (error) {
-      console.error("Hata Oluştu: " + error.message);
-    }
+      try {
+          var optimizedCode = optimizeAndFixErrors(originalCode, selectedLanguage);
+          document.getElementById('codeInput').value = optimizedCode;
+          document.getElementById('result').innerText = optimizedCode;
+      } catch (error) {
+          console.error("Hata Oluştu: " + error.message);
+      }
   });
 
   function optimizeAndFixErrors(code, language) {
-    switch (language) {
-      case 'javascript':
-        return optimizeAndFixJavaScript(code);
-      case 'python':
-        return optimizeAndFixPython(code);
-      case 'cpp':
-        return optimizeAndFixCpp(code);
-      case 'java':
-        return optimizeAndFixJava(code);
-      case 'ruby':
-        return optimizeAndFixRuby(code);
-      case 'php':
-        return optimizeAndFixPHP(code);
-      case 'swift':
-        return optimizeAndFixSwift(code);
-      case 'go':
-        return optimizeAndFixGo(code);
-      default:
-        throw new Error('Desteklenmeyen dil');
-    }
+      switch (language) {
+          case 'javascript':
+              return optimizeAndFixJavaScript(code);
+          case 'python':
+              return optimizeAndFixPython(code);
+          case 'cpp':
+              return optimizeAndFixCpp(code);
+          case 'java':
+              return optimizeAndFixJava(code);
+          case 'ruby':
+              return optimizeAndFixRuby(code);
+          case 'php':
+              return optimizeAndFixPHP(code);
+          case 'swift':
+              return optimizeAndFixSwift(code);
+          case 'go':
+              return optimizeAndFixGo(code);
+          case 'rust':
+              return optimizeAndFixRust(code);
+          case 'csharp':
+              return optimizeAndFixCSharp(code);
+          case 'typescript':
+              return optimizeAndFixTypeScript(code);
+          case 'assembly':
+              return optimizeAndFixAssembly(code);
+          default:
+              throw new Error('Desteklenmeyen dil');
+      }
   }
 
+  function optimizeAndFixRust(code) {
+      // Rust diline özgü optimize işlemleri
+      code = code.replace(/\/\/.*$/gm, '');
+      code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+      code = code.replace(/^\s*[\r\n]/gm, '');
+      code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
+      code = code.trim();
+      // Diğer optimize işlemleri buraya eklenir...
+      return code;
+  }
+
+  function optimizeAndFixCSharp(code) {
+      // C# diline özgü optimize işlemleri
+      code = code.replace(/\/\/.*$/gm, '');
+      code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+      code = code.replace(/^\s*[\r\n]/gm, '');
+      code = code.replace(/^\s+/gm, '').replace(/\s+$/gm, '');
+      code = code.trim();
+      // Diğer optimize işlemleri buraya eklenir...
+      return code;
+  }
+
+  function optimizeAndFixTypeScript(code) {
+      // TypeScript diline özgü optimize işlemleri
+      code = code.replace(/\/\/.*$/gm, '');
+      code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+      code = code.replace(/^\s*[\r\n]/gm, '');
+      code = code.replace(/^\s+/gm, '').replace(/\s+$/gm, '');
+      code = code.trim();
+      // Diğer optimize işlemleri buraya eklenir...
+      return code;
+  }
+
+  function optimizeAndFixAssembly(code) {
+      // Assembly diline özgü optimize işlemleri
+      code = code.replace(/\/\/.*$/gm, '');
+      code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
+      code = code.replace(/^\s*[\r\n]/gm, '');
+      code = code.replace(/^\s+/gm, '').replace(/\s+$/gm, '');
+      code = code.trim();
+      // Diğer optimize işlemleri buraya eklenir...
+      return code;
+  }
 
   
   function optimizeAndFixJavaScript(code) {
