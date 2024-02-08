@@ -153,3 +153,68 @@ document.addEventListener('DOMContentLoaded', function () {
     return code;
   }
 });
+
+
+//NEW SYSTEM
+document.addEventListener("DOMContentLoaded", function () {
+    // Sayfa yüklendiğinde optionsDiv elementini gizleyelim
+    document.getElementById("optionsDiv").style.display = "none";
+  
+    // Seçenekleri saklamak için bir dizi oluşturalım
+    var selectedOptions = loadOptions(); // Sayfa yüklendiğinde önceki seçenekleri yükle
+  
+    // toggleOptions fonksiyonunu tanımlayalım
+    function toggleOptions() {
+      var optionsDiv = document.getElementById("optionsDiv");
+  
+      // optionsDiv'in görünürlüğünü kontrol edelim
+      if (optionsDiv.style.display === "none" || optionsDiv.style.display === "") {
+        // Eğer gizli ise veya display özelliği boş ise göster
+        optionsDiv.style.display = "block";
+      } else {
+        // Eğer görünür ise gizle
+        optionsDiv.style.display = "none";
+      }
+    }
+  
+    // Filter butonuna tıklanma olayını dinleyelim
+    document.getElementById("Filter").addEventListener("click", toggleOptions);
+  
+    // Checkbox'ların değişiklik olayını dinleyerek seçenekleri kaydedelim
+    var checkboxes = document.querySelectorAll('#optionsDiv input[type="checkbox"]');
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener("change", function () {
+        if (this.checked) {
+          // Eğer checkbox işaretli ise seçeneği ekleyelim
+          selectedOptions.push(this.value);
+        } else {
+          // Eğer checkbox işaretli değilse seçeneği kaldıralım
+          var index = selectedOptions.indexOf(this.value);
+          if (index !== -1) {
+            selectedOptions.splice(index, 1);
+          }
+        }
+  
+        // Seçenekleri konsola yazdıralım (isteğe bağlı)
+        console.log("Seçilen Seçenekler: ", selectedOptions);
+  
+        // Seçenekleri otomatik olarak kaydet
+        saveOptions(selectedOptions);
+      });
+    });
+  
+    // saveOptions fonksiyonunu tanımlayalım
+    function saveOptions(options) {
+      console.log("Seçenekler otomatik olarak kaydedildi: ", options);
+      // Seçenekleri tarayıcı hafızasına (localStorage) kaydet
+      localStorage.setItem("selectedOptions", JSON.stringify(options));
+    }
+  
+    // loadOptions fonksiyonunu tanımlayalım
+    function loadOptions() {
+      // Kaydedilmiş seçenekleri tarayıcı hafızasından yükle
+      var savedOptions = localStorage.getItem("selectedOptions");
+      return savedOptions ? JSON.parse(savedOptions) : [];
+    }
+  });
+  

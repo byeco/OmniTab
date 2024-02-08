@@ -214,3 +214,28 @@ button img {
     padding: 8px;
     z-index: 1000;
   }
+
+  /*Optimize Seçenekleri*/
+  #optionsDiv {
+    display: none;
+    background-color: #333; /* Arkaplan rengi */
+    padding: 10px;
+    border-radius: 5px; /* Kenar yumuşatma */
+  }
+  
+  #optionsDiv ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #optionsDiv li {
+    margin-bottom: 5px; /* Seçenekler arası boşluk */
+  }
+  
+  #optionsDiv label {
+    color: #ffffff; /* Metin rengi */
+  }
+  
+  #optionsDiv input[type="checkbox"] {
+    margin-right: 5px; /* Checkbox ile metin arasındaki boşluk */
+  }

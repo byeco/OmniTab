@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Optimize Hub Beta",
-  "version": "0.2",
+  "name": "Optimize Hub",
+  "version": "0.3",
   "description": "Optimize Hub optimizes your code for you, helps with extra codes, and provides support in design.",
   "background": {
     "serviceWorker": "JS/background.js"
