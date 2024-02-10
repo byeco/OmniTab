@@ -2,15 +2,15 @@
   "manifest_version": 3,
   "name": "Optimize Hub",
   "version": "0.3",
-  "description": "Optimize Hub optimizes your code for you, helps with extra codes, and provides support in design.",
+  "description": "Optimize Hub optimizes your codes, you can use the optimization function you want with the filter option",
   "background": {
     "serviceWorker": "JS/background.js"
   },
   "icons": {
-    "48": "ICON/icon.png"
+    "48": "ICON/lunar-new-year.png"
   },
   "action": {
-    "default_icon": "ICON/icon.png",
+    "default_icon": "ICON/lunar-new-year.png",
     "default_popup": "popup.html"
   },
   "content_scripts": [
