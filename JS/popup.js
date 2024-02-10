@@ -68,140 +68,71 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function optimizeAndFixPython(code, selectedOptions) {
-        code = code.replace(/'''[\s\S]*?'''|"""[\s\S]*?"""/g, '');
-        code = code.replace(/#.*$/gm, '');
-        code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-        code = code.trim();
-
         // Seçilen ekstra optimize işlemlerini uygula
         code = applyExtraOptimizations(code, 'python', selectedOptions);
-
-        return code;
+        return code.trim();
     }
-
+    
     function optimizeAndFixCpp(code, selectedOptions) {
-        code = code.replace(/\/\/.*$/gm, '');
-        code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-        code = code.replace(/;\s*;/g, ';');
-        code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-        code = code.trim();
-
         // Seçilen ekstra optimize işlemlerini uygula
         code = applyExtraOptimizations(code, 'cpp', selectedOptions);
-
-        return code;
+        return code.trim();
     }
-
+    
     function optimizeAndFixJava(code, selectedOptions) {
-        code = code.replace(/\/\/.*$/gm, '');
-        code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-        code = code.replace(/;\s*;/g, ';');
-        code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-        code = code.trim();
-
         // Seçilen ekstra optimize işlemlerini uygula
         code = applyExtraOptimizations(code, 'java', selectedOptions);
-
-        return code;
+        return code.trim();
     }
-
+    
     function optimizeAndFixRuby(code, selectedOptions) {
-        code = code.replace(/#.*$/gm, '');
-        code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-        code = code.trim();
-
         // Seçilen ekstra optimize işlemlerini uygula
         code = applyExtraOptimizations(code, 'ruby', selectedOptions);
-
-        return code;
+        return code.trim();
     }
-
+    
     function optimizeAndFixPHP(code, selectedOptions) {
-        code = code.replace(/\/\/.*$|^\s*#.*$/gm, '');
-        code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-        code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-        code = code.trim();
-
         // Seçilen ekstra optimize işlemlerini uygula
         code = applyExtraOptimizations(code, 'php', selectedOptions);
-
-        return code;
+        return code.trim();
     }
-
+    
     function optimizeAndFixSwift(code, selectedOptions) {
-        code = code.replace(/\/\/.*$/gm, '');
-        code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-        code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-        code = code.trim();
-
         // Seçilen ekstra optimize işlemlerini uygula
         code = applyExtraOptimizations(code, 'swift', selectedOptions);
-
-        return code;
+        return code.trim();
     }
-
+    
     function optimizeAndFixGo(code, selectedOptions) {
-        code = code.replace(/\/\/.*$/gm, '');
-        code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-        code = code.trim();
-
         // Seçilen ekstra optimize işlemlerini uygula
         code = applyExtraOptimizations(code, 'go', selectedOptions);
-
-        return code;
+        return code.trim();
     }
-
+    
     function optimizeAndFixRust(code, selectedOptions) {
-        code = code.replace(/\/\/.*$/gm, '');
-        code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-        code = code.replace(/^\s*[\r\n]/gm, '');
-        code = code.replace(/\s+$/gm, '').replace(/^\s+/gm, '');
-        code = code.trim();
-
         // Seçilen ekstra optimize işlemlerini uygula
         code = applyExtraOptimizations(code, 'rust', selectedOptions);
-
-        return code;
+        return code.trim();
     }
-
+    
     function optimizeAndFixCSharp(code, selectedOptions) {
-        code = code.replace(/\/\/.*$/gm, '');
-        code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-        code = code.replace(/^\s*[\r\n]/gm, '');
-        code = code.replace(/^\s+/gm, '').replace(/\s+$/gm, '');
-        code = code.trim();
-
         // Seçilen ekstra optimize işlemlerini uygula
         code = applyExtraOptimizations(code, 'csharp', selectedOptions);
-
-        return code;
+        return code.trim();
     }
-
+    
     function optimizeAndFixTypeScript(code, selectedOptions) {
-        code = code.replace(/\/\/.*$/gm, '');
-        code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-        code = code.replace(/^\s*[\r\n]/gm, '');
-        code = code.replace(/^\s+/gm, '').replace(/\s+$/gm, '');
-        code = code.trim();
-
         // Seçilen ekstra optimize işlemlerini uygula
         code = applyExtraOptimizations(code, 'typescript', selectedOptions);
-
-        return code;
+        return code.trim();
     }
-
+    
     function optimizeAndFixAssembly(code, selectedOptions) {
-        code = code.replace(/\/\/.*$/gm, '');
-        code = code.replace(/\/\*[\s\S]*?\*\//gm, '');
-        code = code.replace(/^\s*[\r\n]/gm, '');
-        code = code.replace(/^\s+/gm, '').replace(/\s+$/gm, '');
-        code = code.trim();
-
         // Seçilen ekstra optimize işlemlerini uygula
         code = applyExtraOptimizations(code, 'assembly', selectedOptions);
-
-        return code;
+        return code.trim();
     }
+    
 
     const commentPatterns = {
         'javascript': /\/\/.*$|\/\*[\s\S]*?\*\//gm,
