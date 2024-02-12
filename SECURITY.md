@@ -2,6 +2,6 @@
 
 Mail= `info@byeco.xyz`
 
-Discord Name= `nostgeco`
+Discord Name= `byeeco`
 
 Discord Sunucum= https://discord.gg/zCTCpGxw
