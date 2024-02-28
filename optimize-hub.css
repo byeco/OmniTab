@@ -64,11 +64,18 @@ textarea {
 .footer {
     width: 500px;
     margin-top: 0px;
-    margin-left: -190px;
+    margin-left: -120px;
     text-align: center;
     background-color: #4d4d4d; 
     padding: 15px;
     color: #fff; 
+}
+
+.windows-icon {
+    width: 20px; /* İkon genişliği */
+    height: 20px; /* İkon yüksekliği */
+
+    fill: #ffffff; /* İkon rengi (örnekte beyaz) */
 }
 
 .footer p {
