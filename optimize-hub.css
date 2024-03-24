@@ -39,13 +39,14 @@ textarea {
     color: #fff;
     height: 150px; 
     overflow: hidden; /* Yanları göstermemek için eklenen stil */
-    border: none; /* İsteğe bağlı olarak kenar çizgisini kaldırabilirsiniz */
-    resize: none; /* Yan çizgileri kaldırmak için eklenen stil */
+    border: none;
+    resize: none;
+    outline: none;
 }
 
 #optimizeButton {
-    width: 70%; 
-    background-color: #2ecc71; 
+    width: 100%; 
+    background-color: #8e0caf00; 
     color: #fff; 
     padding: 10px;
     cursor: pointer;
@@ -53,8 +54,12 @@ textarea {
     border-radius: 5px;
 }
 
+#svg:hover path {
+    fill: #fff; /* veya istediğiniz beyaz rengi kullanabilirsiniz */
+  }
+
 #optimizeButton:hover {
-    background-color: #27ae60; 
+    background-color: #4d4d4d8a; 
 }
 
 #result {
@@ -81,8 +86,14 @@ textarea {
 .footer p {
     margin: 0;
     font-size: 13px;
+
 }
 
+.star {
+    margin-top: -5px;
+    position: fixed;
+}
+  
 
 .github-icon img {
     width: 20px;
@@ -90,7 +101,6 @@ textarea {
 }
 
 
-  
 .select-container {
     display: flex;
     align-items: center;
