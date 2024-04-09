@@ -45,7 +45,7 @@ textarea {
 }
 
 #optimizeButton {
-    width: 100%; 
+    width: 70%; 
     background-color: #8e0caf00; 
     color: #fff; 
     padding: 10px;
@@ -53,6 +53,8 @@ textarea {
     border: none;
     border-radius: 5px;
 }
+
+
 
 #svg:hover path {
     fill: #fff; /* veya istediğiniz beyaz rengi kullanabilirsiniz */
@@ -100,21 +102,26 @@ textarea {
     margin-right: 5px;
 }
 
-
 .select-container {
     display: flex;
     align-items: center;
 }
 
-select {
+.select-container select {
     width: 40%;
-    padding: 8px; /* Küçük bir padding eklendi */
+    padding: 10px;
     margin-left: 10px;
-    background-color: #3498db;
+    background-color: #3498db00;
     color: #fff;
     border: none;
     border-radius: 5px;
 }
+
+.select-container select:focus {
+    outline: none;
+    background-color: #7575757e; /* Açılır menü (select) elemanının açıldığı kısmın arka plan rengi */
+}
+
   
 #loginButton {
     padding: 10px;
@@ -257,4 +264,20 @@ button img {
   
   #optionsDiv input[type="checkbox"] {
     margin-right: 5px; /* Checkbox ile metin arasındaki boşluk */
+    /* Checkbox'un tasarımı */
+    -webkit-appearance: none; /* Tarayıcı varsayılan görünümü devre dışı bırak */
+    -moz-appearance: none;
+    appearance: none;
+    width: 10px; /* Checkbox boyutu */
+    height: 10px;
+    border: 2px solid #ffffff; /* Checkbox kenarlık rengi */
+    border-radius: 3px; /* Checkbox kenar yumuşatma */
+    outline: none; /* Odaklandığında görünüm */
+    background-color: transparent; /* Checkbox arka plan rengi */
+    cursor: pointer; /* İmleç tipi */
   }
+  
+  #optionsDiv input[type="checkbox"]:checked {
+    background-color: #ffffff; /* Seçili durumda Checkbox arka plan rengi */
+  }
+  
