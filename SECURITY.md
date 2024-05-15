@@ -1,7 +1,7 @@
-# Bilgi yada Birinin çalması durumunda iletişim bilgileri
+# Information or contact information in case someone steals it
 
-Mail= `info@byeco.xyz`
+Mail= 'info@byeco.xyz'
 
-Discord Name= `byeeco`
+Discord Name= 'byeeco'
 
-Discord Sunucum= [https://discord.gg/9aKgRBEqJp](https://discord.gg/MtYFBcv2jR)
+My Discord Server= [https://discord.gg/9aKgRBEqJp](https://discord.gg/MtYFBcv2jR)
