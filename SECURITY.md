@@ -4,4 +4,4 @@ Mail= `info@byeco.xyz`
 
 Discord Name= `byeeco`
 
-Discord Sunucum= https://discord.gg/9aKgRBEqJp
+Discord Sunucum= [https://discord.gg/9aKgRBEqJp](https://discord.gg/MtYFBcv2jR)
