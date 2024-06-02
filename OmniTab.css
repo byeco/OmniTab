@@ -123,24 +123,7 @@ textarea {
 }
 
   
-#loginButton {
-    padding: 10px;
-    background-color: #ffffff25;
-    color: white;
-    border: none;
-    border-radius: 50%; /* Tam yuvarlak için %50 */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* İçerikleri ortala */
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    width: 50px; /* Genişlik ve yükseklik eklendi */
-    height: 50px; /* Genişlik ve yükseklik eklendi */
-    background: url('İCON/dev.gif') no-repeat center center;
-    background-size: 60%; /* Resmi biraz büyüt */
-  }
+
   
   #loginButton:hover {
     background-color: #ffffff23;
@@ -280,4 +263,20 @@ button img {
   #optionsDiv input[type="checkbox"]:checked {
     background-color: #ffffff; /* Seçili durumda Checkbox arka plan rengi */
   }
+  
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px;
+    gap: 8px; /* İkon ile metin arasındaki boşluk */
+  }
+  
+  button span {
+    flex-grow: 1; /* Metnin tüm boşluğu kaplamasını sağlar */
+    text-align: left; /* Metni sola hizalar */
+  }
+
+  /*! Song Volume*/
+
   

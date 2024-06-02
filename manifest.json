@@ -1,11 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "Rym",
+  "name": "OmniTab",
   "version": "0.5",
-  "description": "Rym optimizes your codes, you can use the optimization function you want with the filter option",
+  "description": "OmniTab optimizes your codes, you can use the optimization function you want with the filter option",
   "background": {
     "serviceWorker": "JS/background.js"
   },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
   "icons": {
     "48": "ICON/icon.png"
   },

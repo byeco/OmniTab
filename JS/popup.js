@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+
+
     function getSelectedOptions() {
         // Seçilen seçenekleri al
         var checkboxes = document.querySelectorAll('#optionsDiv input[type="checkbox"]:checked');
@@ -276,3 +278,67 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    var toggleButton = document.getElementById('toggleButton');
+    if (toggleButton) {
+        toggleButton.addEventListener('click', toggleContent);
+    }
+
+    var ttoggleButton = document.getElementById('ttoggleButton');
+    if (ttoggleButton) {
+        ttoggleButton.addEventListener('click', toggleContentt);
+    }
+});
+
+
+// Görünmez içeriği gösteren ve gizleyen işlev
+function toggleContent() {
+    var hiddenContent = document.getElementById("hiddenContent");
+    if (hiddenContent.style.display === "none") {
+      hiddenContent.style.display = "block";
+      document.getElementById("maincard").style.display = "none"; // maincard'ı gizle
+      document.getElementById("ttoggleButton").style.display = "none"; // maincard'ı gizle
+      document.getElementById("tttoggleButton").style.display = "none"; // maincard'ı gizle
+    } else {
+      hiddenContent.style.display = "none";
+      document.getElementById("maincard").style.display = "block"; // maincard'ı göster
+      document.getElementById("ttoggleButton").style.display = "block"; // maincard'ı göster
+      document.getElementById("tttoggleButton").style.display = "block"; // maincard'ı göster
+    }
+  }
+
+// Görünmez içeriği gösteren ve gizleyen işlev
+function toggleContentt() {
+    var hiddenContentt = document.getElementById("hiddenContentt");
+    if (hiddenContentt.style.display === "none") {
+        hiddenContentt.style.display = "block";
+        document.getElementById("maincard").style.display = "none"; // maincard'ı gizle
+        document.getElementById("toggleButton").style.display = "none"; // maincard'ı gizle
+        document.getElementById("tttoggleButton").style.display = "none"; // maincard'ı gizle
+    } else {
+        document.getElementById("maincard").style.display = "block"; // maincard'ı gizle
+        hiddenContentt.style.display = "none";
+      document.getElementById("toggleButton").style.display = "block"; // ttoggleButton'ı göster
+      document.getElementById("tttoggleButton").style.display = "block"; // ttoggleButton'ı göster
+    }
+  }
+  
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const volumeSlider = document.getElementById('volumeSlider');
+    const volumeValue = document.getElementById('volumeValue');
+  
+    volumeSlider.addEventListener('input', function () {
+      const volume = volumeSlider.value;
+      volumeValue.textContent = volume;
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { action: 'updateVolume', volume: volume }, function(response) {
+          if (response && response.status === 'success') {
+            console.log('Volume updated successfully');
+          }
+        });
+      });
+    });
+  });
