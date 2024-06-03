@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "OmniTab",
-  "version": "0.5",
+  "version": "1.0",
   "description": "OmniTab optimizes your codes, you can use the optimization function you want with the filter option",
   "background": {
     "serviceWorker": "JS/background.js"

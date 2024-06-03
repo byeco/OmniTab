@@ -289,6 +289,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (ttoggleButton) {
         ttoggleButton.addEventListener('click', toggleContentt);
     }
+
+    var tttoggleButton = document.getElementById('tttoggleButton');
+    if (tttoggleButton) {
+        tttoggleButton.addEventListener('click', toggleContenttt);
+    }
 });
 
 
@@ -324,6 +329,21 @@ function toggleContentt() {
     }
   }
   
+  // Görünmez içeriği gösteren ve gizleyen işlev
+function toggleContenttt() {
+  var hiddenContenttt = document.getElementById("hiddenContenttt");
+  if (hiddenContenttt.style.display === "none") {
+      hiddenContenttt.style.display = "block";
+      document.getElementById("maincard").style.display = "none"; // maincard'ı gizle
+      document.getElementById("toggleButton").style.display = "none"; // maincard'ı gizle
+      document.getElementById("ttoggleButton").style.display = "none"; // maincard'ı gizle
+  } else {
+      document.getElementById("maincard").style.display = "block"; // maincard'ı gizle
+      hiddenContenttt.style.display = "none";
+    document.getElementById("toggleButton").style.display = "block"; // ttoggleButton'ı göster
+    document.getElementById("ttoggleButton").style.display = "block"; // ttoggleButton'ı göster
+  }
+}
 
 
   document.addEventListener('DOMContentLoaded', function () {
