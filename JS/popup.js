@@ -294,6 +294,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (tttoggleButton) {
         tttoggleButton.addEventListener('click', toggleContenttt);
     }
+
+    var randompassword = document.getElementById('randompassword');
+    if (randompassword) {
+      randompassword.addEventListener('click', randompassword);
+    }
 });
 
 
@@ -303,13 +308,19 @@ function toggleContent() {
     if (hiddenContent.style.display === "none") {
       hiddenContent.style.display = "block";
       document.getElementById("maincard").style.display = "none"; // maincard'ı gizle
+      document.getElementById("maincardPASSWORD").style.display = "none"; // maincard'ı gizle
       document.getElementById("ttoggleButton").style.display = "none"; // maincard'ı gizle
       document.getElementById("tttoggleButton").style.display = "none"; // maincard'ı gizle
+      document.getElementById("ttttoggleButton").style.display = "none"; // maincard'ı gizle
+      document.getElementById("tttttoggleButton").style.display = "none"; // maincard'ı gizle
     } else {
       hiddenContent.style.display = "none";
       document.getElementById("maincard").style.display = "block"; // maincard'ı göster
+      document.getElementById("maincardPASSWORD").style.display = "block"; // maincard'ı göster
       document.getElementById("ttoggleButton").style.display = "block"; // maincard'ı göster
       document.getElementById("tttoggleButton").style.display = "block"; // maincard'ı göster
+      document.getElementById("ttttoggleButton").style.display = "block"; // maincard'ı göster
+      document.getElementById("tttttoggleButton").style.display = "block"; // maincard'ı göster
     }
   }
 
@@ -319,13 +330,20 @@ function toggleContentt() {
     if (hiddenContentt.style.display === "none") {
         hiddenContentt.style.display = "block";
         document.getElementById("maincard").style.display = "none"; // maincard'ı gizle
+        document.getElementById("maincardPASSWORD").style.display = "none"; // maincard'ı gizle
         document.getElementById("toggleButton").style.display = "none"; // maincard'ı gizle
         document.getElementById("tttoggleButton").style.display = "none"; // maincard'ı gizle
+        document.getElementById("ttttoggleButton").style.display = "none"; // maincard'ı gizle
+        document.getElementById("tttttoggleButton").style.display = "none"; // maincard'ı gizle
     } else {
         document.getElementById("maincard").style.display = "block"; // maincard'ı gizle
         hiddenContentt.style.display = "none";
+      document.getElementById("maincardPASSWORD").style.display = "block"; // ttoggleButton'ı göster
       document.getElementById("toggleButton").style.display = "block"; // ttoggleButton'ı göster
       document.getElementById("tttoggleButton").style.display = "block"; // ttoggleButton'ı göster
+      document.getElementById("ttttoggleButton").style.display = "block"; // ttoggleButton'ı göster
+      document.getElementById("ttttoggleButton").style.display = "block"; // ttoggleButton'ı göster
+      document.getElementById("tttttoggleButton").style.display = "block"; // ttoggleButton'ı göster
     }
   }
   
@@ -335,30 +353,84 @@ function toggleContenttt() {
   if (hiddenContenttt.style.display === "none") {
       hiddenContenttt.style.display = "block";
       document.getElementById("maincard").style.display = "none"; // maincard'ı gizle
+      document.getElementById("maincardPASSWORD").style.display = "block"; // ttoggleButton'ı göster   
       document.getElementById("toggleButton").style.display = "none"; // maincard'ı gizle
       document.getElementById("ttoggleButton").style.display = "none"; // maincard'ı gizle
+      document.getElementById("ttttoggleButton").style.display = "none"; // maincard'ı gizle
+      document.getElementById("tttttoggleButton").style.display = "none"; // maincard'ı gizle
   } else {
       document.getElementById("maincard").style.display = "block"; // maincard'ı gizle
       hiddenContenttt.style.display = "none";
+      document.getElementById("maincardPASSWORD").style.display = "none"; // ttoggleButton'ı göster   
     document.getElementById("toggleButton").style.display = "block"; // ttoggleButton'ı göster
     document.getElementById("ttoggleButton").style.display = "block"; // ttoggleButton'ı göster
+    document.getElementById("ttttoggleButton").style.display = "block"; // ttoggleButton'ı göster
+    document.getElementById("tttttoggleButton").style.display = "block"; // ttoggleButton'ı göster
   }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const volumeSlider = document.getElementById('volumeSlider');
+  const volumeValue = document.getElementById('volumeValue');
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const volumeSlider = document.getElementById('volumeSlider');
-    const volumeValue = document.getElementById('volumeValue');
-  
-    volumeSlider.addEventListener('input', function () {
-      const volume = volumeSlider.value;
-      volumeValue.textContent = volume;
-      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, { action: 'updateVolume', volume: volume }, function(response) {
-          if (response && response.status === 'success') {
-            console.log('Volume updated successfully');
-          }
-        });
+  volumeSlider.addEventListener('input', function () {
+    const volume = volumeSlider.value;
+    volumeValue.textContent = volume;
+    chrome.tabs.query({}, function (tabs) {
+      tabs.forEach(tab => {
+        if (tab.url.includes('spotify.com') || tab.url.includes('youtube.com')) {
+          chrome.tabs.sendMessage(tab.id, { action: 'updateVolume', volume: volume / 600 }, function (response) {
+            if (response && response.status === 'success') {
+              console.log('Volume updated successfully for tab:', tab.id);
+            }
+          });
+        }
       });
     });
   });
+
+  // Reset Volume Button
+  document.getElementById('resetVolumeButton').addEventListener('click', function () {
+    volumeSlider.value = 100;
+    volumeValue.textContent = 100;
+    chrome.tabs.query({}, function (tabs) {
+      tabs.forEach(tab => {
+        if (tab.url.includes('spotify.com') || tab.url.includes('youtube.com')) {
+          chrome.tabs.sendMessage(tab.id, { action: 'updateVolume', volume: 100 / 600 }, function (response) {
+            if (response && response.status === 'success') {
+              console.log('Volume reset successfully for tab:', tab.id);
+            }
+          });
+        }
+      });
+    });
+  });
+});
+
+
+
+
+document.getElementById('randompassword').addEventListener('click', generatePassword);
+
+function generatePassword() {
+    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+[]{}|;:,.<>?';
+    const passwordLength = 12; // Şifrenin uzunluğu
+    let password = '';
+    for (let i = 0; i < passwordLength; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        password += characters[randomIndex];
+    }
+
+    displayMessage(password);
+}
+
+function displayMessage(password) {
+    const messageDiv = document.getElementById('password');
+    if (password) {
+        messageDiv.textContent = `${password}`;
+        messageDiv.className = 'message-positive';
+    } else {
+        messageDiv.textContent = 'Failed to generate password.';
+        messageDiv.className = 'message-negative';
+    }
+}

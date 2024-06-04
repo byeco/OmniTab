@@ -6,10 +6,6 @@
   "background": {
     "serviceWorker": "JS/background.js"
   },
-  "permissions": [
-    "activeTab",
-    "scripting"
-  ],
   "icons": {
     "48": "ICON/icon.png"
   },
@@ -17,6 +13,9 @@
     "default_icon": "ICON/icon.png",
     "default_popup": "popup.html"
   },
+  "permissions": [
+    "activeTab"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
