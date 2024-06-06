@@ -4,4 +4,4 @@ Mail= `info@byeco.xyz`
 
 Discord Name= `byeeco`
 
-My Discord Server= [https://discord.gg/9aKgRBEqJp](https://discord.gg/MtYFBcv2jR)
+My Discord Server= [https://discord.gg/9aKgRBEqJp](https://discord.gg/MtYFBcv2jR) / [https://discord.gg/byeco](https://discord.gg/byeco)
