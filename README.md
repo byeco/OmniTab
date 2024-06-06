@@ -2,7 +2,7 @@
 
 OmniTab optimizes your codes, you can use the optimization function you want with the filter option
 
-![unnamed](https://github.com/byeco/Optimize-Hub/assets/77041562/e97b115e-1c4e-4199-8186-cd77d0e90329)
+![Byeco](https://github.com/byeco/OmniTab/assets/77041562/49e090ad-52fa-41f3-91ff-54e0a70a78d0)
 
 
 # How do I add this extension to Microsoft?
